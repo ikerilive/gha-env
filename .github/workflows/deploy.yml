@@ -11,8 +11,8 @@ jobs:
   test:
     env:
       MONGODB_CLUSTER_ADDRESS: fullstack.z2ut5.mongodb.net
-      MONGODB_USERNAME: ikerilive
-      MONGODB_PASSWORD: g4SoSP5NAqlHpgl2
+      MONGODB_USERNAME: ${{ secrets.MONGODB_USERNAME }}
+      MONGODB_PASSWORD: ${{ secrets.MONGODB_PASSWORD }}
       PORT: 3000
 
     runs-on: ubuntu-latest
@@ -39,5 +39,5 @@ jobs:
     steps:
       - name: Output information
         run: |        
-          echo "MONGODB_USERNAME: ${{ env.MONGODB_USERNAME }}"
+          echo "MONGODB_USERNAME: ${{ secrets.MONGODB_PASSWORD }}"
           echo "MONGODB_DB_NAME: $MONGODB_DB_NAME"
